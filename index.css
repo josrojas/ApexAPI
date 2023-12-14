@@ -1,3 +1,6 @@
+html{
+    background-color: #888;
+}
 .mapContainer {
     display: flex;
     flex-direction: column;
@@ -7,13 +10,13 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     width: 100%;
-  
+    background-color: #777;  
 }
 
 h1,
 h2 {
     padding-top: 30px;
-    color: #777;
+    color: #333;
 }
 
 .img{
@@ -53,7 +56,7 @@ h2 {
 #ltmNext {
     font: bold;
     font-size: 18px;
-    color: #000;
+    color: #fff;
     margin-bottom: 25px;
 }
 
@@ -61,7 +64,7 @@ h2 {
 #remainingTimerLtm,
 #text {
     font-size: 17px;
-    color: #000;
+    color: #fff;
     font-style: italic;
     margin-bottom: 25px;
 }
