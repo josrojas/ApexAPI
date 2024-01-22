@@ -85,3 +85,10 @@ h2 {
     font-style: italic;
     margin-bottom: 25px;
 }
+
+footer{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
