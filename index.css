@@ -1,6 +1,7 @@
 html{
     background-color: #888;
 }
+
 .mapContainer {
     display: flex;
     flex-direction: column;
@@ -13,10 +14,15 @@ html{
     background-color: #777;  
 }
 
-h1,
-h2 {
+h1 {
     padding-top: 30px;
     color: #333;
+}
+
+h2 {
+    padding-top: 30px;
+    color: #fff;
+    margin-top: -500px;
 }
 
 .img{
@@ -24,28 +30,39 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 100px;
+
 }
 
-.imgLtm{
+.container{
     display: flex;
     flex-direction: column;
-    height: 10%;
+    align-items: center;
     width: 100%;
-    margin-top: 80px;
-
 }
 
-.pbContainer{
-    margin-top: -650px;
+#assetPb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 720px;
+    width: 1850px;
+    margin-top: 50px;
 }
 
-.rankContainer{
-    margin-top: -700px;
+#assetRk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 720px;
+    width: 1850px;
 }
 
-.ltmContainer{
-    margin-top: -350px;
+#assetLtm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 720px;
+    width: 1850px;
 }
 
 #current,
@@ -55,7 +72,7 @@ h2 {
 #ltm,
 #ltmNext {
     font: bold;
-    font-size: 18px;
+    font-size: 22px;
     color: #fff;
     margin-bottom: 25px;
 }
@@ -63,7 +80,7 @@ h2 {
 #remainingTimer,
 #remainingTimerLtm,
 #text {
-    font-size: 17px;
+    font-size: 20px;
     color: #fff;
     font-style: italic;
     margin-bottom: 25px;

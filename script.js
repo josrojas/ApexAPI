@@ -10,13 +10,11 @@ const ltm = document.getElementById('ltm');
 const remainingTimerLtm = document.getElementById('remainingTimerLtm');
 const ltmNext = document.getElementById('ltmNext');
 
-const assetPb = document.getElementById('assetPb');
-const assetRk = document.getElementById('assetRk');
-const assetLtm = document.getElementById('assetLtm');
-
 // Use the API and displays the current map and the time remaining until the next map every time the page is loaded.
 
 window.onload = () => {
+    console.log(document.getElementById('current'));
+
     fetch('https://api.mozambiquehe.re/maprotation?auth=1a80230fb76d0a946f0872dc4be8d726&version=2')
         .then(res => res.json())
         .then(data => {
@@ -37,7 +35,11 @@ window.onload = () => {
 
             ltmNext.innerText = `LTM Siguiente: ${JSON.stringify(data.ltm?.next?.eventName)} ${JSON.stringify(data.ltm?.next?.map)}`
 
-            assetPb.innerText = `${JSON.stringify(data.battle_royale?.current?.asset)}`
+            document.getElementById('assetPb').src = data.battle_royale?.current?.asset;
+
+            document.getElementById('assetRk').src = data.ranked?.current?.asset;
+
+            document.getElementById('assetLtm').src = data.ltm?.current?.asset;
 
         })
         .catch(e => console.error(new Error(e)));
