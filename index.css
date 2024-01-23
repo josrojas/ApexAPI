@@ -1,5 +1,16 @@
 html{
-    background-color: #888;
+    background-color: #242424;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #242424;  
 }
 
 .mapContainer {
@@ -10,18 +21,18 @@ html{
     margin-top: 50px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    background-color: #777;  
+    background-color: #242424;  
+    max-width: 1280px;
 }
 
 h1 {
     padding-top: 30px;
-    color: #333;
+    color: #999;
 }
 
 h2 {
     padding-top: 30px;
-    color: #fff;
+    color: #999;
     margin-top: -500px;
 }
 
@@ -44,8 +55,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 720px;
-    width: 1850px;
+    height: 640px;
+    width: 1280px;
     margin-top: 50px;
 }
 
@@ -53,16 +64,16 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 720px;
-    width: 1850px;
+    height: 640px;
+    width: 1280px;
 }
 
 #assetLtm{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 720px;
-    width: 1850px;
+    height: 640px;
+    width: 1280px;
 }
 
 #current,
