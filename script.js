@@ -19,21 +19,21 @@ window.onload = () => {
         .then(res => res.json())
         .then(data => {
 
-            current.innerText = `Mapa actual: ${JSON.stringify(data.battle_royale?.current?.map)}`
+            current.innerText = `Mapa actual: ${data.battle_royale?.current?.map}`
 
-            remainingTimer.innerText = `Tiempo restante: ${JSON.stringify(data.battle_royale?.current?.remainingTimer)}`
+            remainingTimer.innerText = `Tiempo restante: ${data.battle_royale?.current?.remainingTimer}`
 
-            next.innerText = `Siguiente mapa: ${JSON.stringify(data.battle_royale?.next?.map)}`
+            next.innerText = `Siguiente mapa: ${data.battle_royale?.next?.map}`
 
-            rank.innerText = `Mapa actual: ${JSON.stringify(data.ranked?.current?.map)}`
+            rank.innerText = `Mapa actual: ${data.ranked?.current?.map}`
 
-            rankNext.innerText = `Siguiente mapa: ${JSON.stringify(data.ranked?.next?.map)}`
+            rankNext.innerText = `Siguiente mapa: ${data.ranked?.next?.map}`
 
-            ltm.innerText = `LTM actual: ${JSON.stringify(data.ltm?.current?.eventName)} ${JSON.stringify(data.ltm?.current?.map)}`
+            ltm.innerText = `LTM actual: ${data.ltm?.current?.eventName} ${data.ltm?.current?.map}`
 
-            remainingTimerLtm.innerText = `Tiempo restante: ${JSON.stringify(data.ltm?.current?.remainingTimer)}`
+            remainingTimerLtm.innerText = `Tiempo restante: ${data.ltm?.current?.remainingTimer}`
 
-            ltmNext.innerText = `LTM Siguiente: ${JSON.stringify(data.ltm?.next?.eventName)} ${JSON.stringify(data.ltm?.next?.map)}`
+            ltmNext.innerText = `LTM Siguiente: ${data.ltm?.next?.eventName} ${data.ltm?.next?.map}`
 
             document.getElementById('assetPb').src = data.battle_royale?.current?.asset;
 
