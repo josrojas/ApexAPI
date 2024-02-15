@@ -54,14 +54,14 @@ window.onload = () => {
             }, 1000);
 
             const remainingTime = new Date(`1970-01-01T${data.battle_royale?.current?.remainingTimer}Z`);
-                const intervalId2 = setInterval(() => {
-                    if (remainingTime.getUTCSeconds() > -1) {
-                        remainingTime.setUTCSeconds(remainingTime.getUTCSeconds() - 1);
-                        remainingTimer.innerText = `Tiempo restante: ${remainingTime.toISOString().slice(11, 19)}`;
-                    } else {
-                        clearInterval(intervalId2);
-                    }
-                }, 1000);
+            const intervalId2 = setInterval(() => {
+                if (remainingTime.getUTCSeconds() > -1) {
+                    remainingTime.setUTCSeconds(remainingTime.getUTCSeconds() - 1);
+                    remainingTimer.innerText = `Tiempo restante: ${remainingTime.toISOString().slice(11, 19)}`;
+                } else {
+                    clearInterval(intervalId2);
+                }
+            }, 1000);
 
         })
         .catch(e => console.error(new Error(e)));
