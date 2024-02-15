@@ -41,22 +41,28 @@ window.onload = () => {
 
             document.getElementById('assetLtm').src = data.ltm?.current?.asset;
 
-            const remainingTime = new Date(`1970-01-01T${data.ltm?.current?.remainingTimer}Z`);
+            const remainingTimeLtm = new Date(`1970-01-01T${data.ltm?.current?.remainingTimer}Z`);
             // update remaining time in real time
             const intervalId = setInterval(() => {
-                if (remainingTime.getUTCSeconds() > -1) {
-                    remainingTime.setUTCSeconds(remainingTime.getUTCSeconds() - 1);
-                    remainingTimer.innerText = `Tiempo restante: ${remainingTime.toISOString().substr(11, 8)}`;
-                    remainingTimerLtm.innerText = `Tiempo restante: ${remainingTime.toISOString().substr(11, 8)}`;
+                if (remainingTimeLtm.getUTCSeconds() > -1) {
+                    remainingTimeLtm.setUTCSeconds(remainingTimeLtm.getUTCSeconds() - 1);
+                    remainingTimerLtm.innerText = `Tiempo restante: ${remainingTimeLtm.toISOString().slice(11, 19)}`;
                 } else {
                     // If the remaining time is 0, stop the interval and get the data again
                     clearInterval(intervalId);
-                    obtenerYMostrarDatos();
                 }
             }, 1000);
+
+            const remainingTime = new Date(`1970-01-01T${data.battle_royale?.current?.remainingTimer}Z`);
+                const intervalId2 = setInterval(() => {
+                    if (remainingTime.getUTCSeconds() > -1) {
+                        remainingTime.setUTCSeconds(remainingTime.getUTCSeconds() - 1);
+                        remainingTimer.innerText = `Tiempo restante: ${remainingTime.toISOString().slice(11, 19)}`;
+                    } else {
+                        clearInterval(intervalId2);
+                    }
+                }, 1000);
 
         })
         .catch(e => console.error(new Error(e)));
 }
-
-obtenerYMostrarDatos();
