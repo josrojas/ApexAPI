@@ -1,4 +1,4 @@
-# Apex Maps - Documentation 🔎
+# Apex Maps - Documentation 📋
 
 App to see the current maps rotation in Apex Legends using an API from `apexlegendsstatus.com`.
 
