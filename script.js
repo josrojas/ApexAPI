@@ -4,6 +4,7 @@ const remainingTimer = document.getElementById('remainingTimer');
 const next = document.getElementById('next');
 
 const rank = document.getElementById('rank');
+const remainingTimerRk = document.getElementById('remainingTimerRk');
 const rankNext = document.getElementById('rankNext');
 
 const ltm = document.getElementById('ltm');
@@ -27,6 +28,8 @@ window.onload = () => {
 
             rank.innerText = `Mapa actual: ${data.ranked?.current?.map}`
 
+            remainingTimerRk.innerText = `Tiempo restante: ${data.ranked?.current?.remainingTimer}`
+
             rankNext.innerText = `Siguiente mapa: ${data.ranked?.next?.map}`
 
             ltm.innerText = `LTM actual: ${data.ltm?.current?.eventName} ${data.ltm?.current?.map}`
@@ -41,25 +44,35 @@ window.onload = () => {
 
             document.getElementById('assetLtm').src = data.ltm?.current?.asset;
 
-            const remainingTimeLtm = new Date(`1970-01-01T${data.ltm?.current?.remainingTimer}Z`);
-            // update remaining time in real time
-            const intervalId = setInterval(() => {
-                if (remainingTimeLtm.getUTCSeconds() > -1) {
-                    remainingTimeLtm.setUTCSeconds(remainingTimeLtm.getUTCSeconds() - 1);
-                    remainingTimerLtm.innerText = `Tiempo restante: ${remainingTimeLtm.toISOString().slice(11, 19)}`;
-                } else {
-                    // If the remaining time is 0, stop the interval and get the data again
-                    clearInterval(intervalId);
-                }
-            }, 1000);
-
             const remainingTime = new Date(`1970-01-01T${data.battle_royale?.current?.remainingTimer}Z`);
+            // update remaining time in real time
             const intervalId2 = setInterval(() => {
                 if (remainingTime.getUTCSeconds() > -1) {
                     remainingTime.setUTCSeconds(remainingTime.getUTCSeconds() - 1);
                     remainingTimer.innerText = `Tiempo restante: ${remainingTime.toISOString().slice(11, 19)}`;
                 } else {
+                    // If the remaining time is 0, stop the interval and get the data again
                     clearInterval(intervalId2);
+                }
+            }, 1000);
+
+            const remainingTimeLtm = new Date(`1970-01-01T${data.ltm?.current?.remainingTimer}Z`);
+            const intervalId = setInterval(() => {
+                if (remainingTimeLtm.getUTCSeconds() > -1) {
+                    remainingTimeLtm.setUTCSeconds(remainingTimeLtm.getUTCSeconds() - 1);
+                    remainingTimerLtm.innerText = `Tiempo restante: ${remainingTimeLtm.toISOString().slice(11, 19)}`;
+                } else {
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+
+            const remainingTimeRk = new Date(`1970-01-01T${data.ranked?.current?.remainingTimer}Z`);
+            const intervalId3 = setInterval(() => {
+                if (remainingTimeRk.getUTCSeconds() > -1) {
+                    remainingTimeRk.setUTCSeconds(remainingTimeRk.getUTCSeconds() - 1);
+                    remainingTimerRk.innerText = `Tiempo restante: ${remainingTimeRk.toISOString().slice(11, 19)}`;
+                } else {
+                    clearInterval(intervalId3);
                 }
             }, 1000);
 
