@@ -6,7 +6,7 @@ This project was made using the next technologies:
 
 **HTML - CSS - JS**
 
-Preview
+# Preview 🗺
 
 ![image](https://github.com/josrojas/ApexAPI/assets/73319827/33debd98-17a8-4dae-a214-fc45abd13048)
 
