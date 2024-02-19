@@ -1,6 +1,30 @@
-HTML - CSS - JS
+# Apex Maps - Documentation 🔎
 
-Aplicación para ver la rotación de mapas actual de Apex Legends mediante uso de API. Data from https://apexlegendsstatus.com
+App to see the current maps rotation in Apex Legends using an API from `apexlegendsstatus.com`.
+
+This project was made using the next technologies:
+
+**HTML - CSS - JS**
+
+**REACT**
+
+**VITE**
+
+# Requirements 📋
+
+Before initialize the project you need to install:
+
+- **Node.js** (version 10 or newer)
+- **NPM** (Node Package Manager)
+
+# Start project ▶️
+
+To run the project you need to use the next command:
+
+npm run dev
+
+This will initialize the server and you can access the app in your browser with this URL: `http://localhost:5173`. 
+
 
 Preview
 
