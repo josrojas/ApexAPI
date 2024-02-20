@@ -104,3 +104,9 @@ footer{
     margin-bottom: 20px;
     color: #fff;
 }
+
+@media (600px <= width <= 1200px){
+    .mapContainer{
+        margin-left: 150px;
+    }
+}
