@@ -1,3 +1,4 @@
+import { APEX_API_KEY } from './config.js';
 
 const current = document.getElementById('current');
 const remainingTimer = document.getElementById('remainingTimer');
@@ -14,9 +15,8 @@ const ltmNext = document.getElementById('ltmNext');
 // Use the API and displays the current map and the time remaining until the next map every time the page is loaded.
 
 window.onload = () => {
-    console.log(document.getElementById('current'));
-
-    fetch('https://api.mozambiquehe.re/maprotation?auth=1a80230fb76d0a946f0872dc4be8d726&version=2')
+ 
+    fetch(`https://api.mozambiquehe.re/maprotation?auth=${APEX_API_KEY}&version=2`)
         .then(res => res.json())
         .then(data => {
 
